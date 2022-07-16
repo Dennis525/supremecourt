@@ -1,0 +1,436 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.logo {
+  background-color: white;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 15% 70% 15%;
+  gap: 20px;
+}
+/* body > header > div.logo > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+.logo .logo-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.logo .logo-name h2 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+}
+.nav {
+  width: 100%;
+  height: 60px;
+  background-color: #49796b;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  /* padding-left: 10px; */
+  /* overflow-y: hidden; */
+}
+.nav ul {
+  /* display: flex; */
+  /* justify-content: space-between; */
+  /* width: 100vw; */
+  /* gap: 2rem; */
+  height: 100%;
+  margin: 0;
+}
+.nav ul li,
+nav ul .side-nav li {
+  float: left;
+  list-style: none;
+  padding: 5px;
+  position: relative;
+}
+.nav ul li:is(:first-child) {
+  margin-left: 5px;
+}
+
+.nav ul li .icon {
+  display: none;
+}
+
+.side-nav {
+  display: flex;
+  /* gap: 2rem; */
+}
+
+.nav ul li :is(a,p),
+.side-nav li a {
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  color: gold;
+  font-size: 18px;
+  padding: 15px 0;
+  text-decoration: none;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+.nav ul li ul,
+.side-nav li ul {
+  color: rgb(164, 140, 5);
+  text-decoration: none;
+  position: absolute;
+  background-color: #49796b;
+  padding: 10px;
+  border-radius: 0px 0px 4px 4px;
+  top: 60px;
+  width: max-content;
+  left: -10px;
+  height: fit-content;
+  /* gap: 2px; */
+  display: none;
+}
+
+.nav ul li:hover ul,
+.side-nav li:hover ul {
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+}
+.nav ul li ul li,
+.side-nav li ul li {
+  width: 180px;
+  border-radius: 4px;
+}
+.nav ul li ul li :is(a,p),
+.side-nav li ul li a {
+  padding: 8px 14px;
+}
+.nav ul li ul li :is(a,p):hover,
+.side-nav li ul li a:hover {
+  background-color: #fff;
+}
+.carousel-inner img {
+  width: 100%;
+  height: 100%;
+}
+.carousel-indicator {
+  display: flex;
+}
+
+.carousel {
+  z-index: -1;
+}
+
+.carousel-item {
+  height: 60vh;
+  width: 100%;
+  object-fit: fill;
+  background-repeat: no-repeat;
+}
+
+/* .carousel-item img{
+    max-width: 100%;
+    max-height: 100%;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    object-fit: cover;
+} */
+.info {
+  background-color: rgb(164, 140, 5);
+  display: flex;
+  padding: 5px 10px;
+  justify-content: space-between;
+}
+.info a{
+  color: black;
+}
+.card-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-color: #d4af37;
+}
+.card {
+  width: 400px;
+  height: 300px;
+  margin: 30px auto;
+}
+.card-header {
+  background-color: #49796b;
+}
+
+.image {
+  background: url("./resources/Justice-william-Ouko-judge.jpg") no-repeat;
+  background-size: 100%;
+}
+
+@media screen and (max-width: 880px) {
+  .info input{
+    display: none;
+  }
+  .nav {
+    width: 100%;
+    overflow: hidden;
+  }
+  /* .nav ul li:not(:first-child,:last-child){
+        display: none;
+    } */
+  .nav ul li .icon {
+    position: absolute;
+    right: 0;
+    display: block;
+  }
+
+  .nav ul {
+    display: flex;
+    justify-content: space-between;
+    width: 90vw;
+    z-index: 10px;
+  }
+
+  .side-nav li {
+    /* position: relative; */
+  }
+
+  .side-nav {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    height: 55vh;
+    background: #49796b;
+    /* top: 100; */
+    overflow: scroll;
+    right: 0;
+    bottom: 45px;
+    width: 50vw;
+    padding-top: 30px;
+    padding-left: 20px;
+    transition: 0.3s ease-in-out;
+    display: none;
+  }
+
+  .side-nav.clicked {
+    display: flex;
+  }
+
+  .side-nav::-webkit-scrollbar-thumb {
+    width: 20px;
+    color: #fff;
+  }
+  .logo {
+    grid-template-columns: 30% 35% 30%;
+    gap: 20px;
+  }
+
+  .side-nav li ul {
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+  }
+
+  .side-nav li:hover ul {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #mynav > ul > div > li > ul {
+    position: initial;
+    margin: 0;
+    padding: 0;
+    width: fit-content;
+  }
+
+  #mynav > ul > div > li:hover > ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #mynav > ul > div > li {
+    width: fit-content;
+  }
+
+  /* 
+  .nav ul li ul,
+  .side-nav li ul { */
+  /* background: white;
+    display: flex;
+    flex-direction: column;
+    position: initial; */
+  /* height: max-content; */
+  /* margin: 0; */
+  /* padding: 0; */
+  /* } */
+  /* .nav ul li.responsive {
+        position: relative;
+    }
+    .nav ul li.responsive a.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .nav ul li.responsive a{
+        float: none;
+        display: block;
+        text-align: left;
+    } */
+}
+
+.container {
+  position: relative;
+  width: auto;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 100px;
+}
+
+.container:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: url("img/location.PNG") no-repeat center;
+  background-size: cover;
+  filter: blur(50px);
+  z-index: -1;
+}
+.contact-box {
+  max-width: 850px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.19);
+}
+
+.left {
+  background: url("resources/location.PNG") no-repeat center;
+  background-size: cover;
+  height: 100%;
+}
+
+.right {
+  padding: 25px 40px;
+}
+
+h2 {
+  position: relative;
+  padding: 0 0 10px;
+  margin-bottom: 10px;
+}
+
+/* h2:after{
+	content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 4px;
+    width: 50px;
+    border-radius: 2px;
+    background-color: red;
+} */
+
+.field {
+  width: 100%;
+  border: 2px solid rgba(0, 0, 0, 0);
+  outline: none;
+  background-color: rgba(230, 230, 230, 0.6);
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  margin-bottom: 22px;
+  transition: 0.3s;
+}
+
+.field:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+textarea {
+  min-height: 150px;
+}
+
+.btn {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background-color: goldenrod;
+  color: #fff;
+  font-size: 1.1rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #27ae60;
+}
+
+.field:focus {
+  border: 2px solid rgba(30, 85, 250, 0.47);
+  background-color: #fff;
+}
+
+@media screen and (max-width: 880px) {
+  .contact-box {
+    grid-template-columns: 1fr;
+  }
+  .left {
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+
+  .logo{
+    grid-template-columns: 15% 60% 15%;
+  }
+}
+
+
+/* .card1{
+	display: flex;
+} */
+.container1 {
+  background: #49796b;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  height: 50vh;
+  width: 100%;
+  padding-top: 20px;
+  flex-wrap: wrap;
+}
+h4,
+a {
+  align-items: center;
+  font-size: large;
+}
+h4 {
+  margin: 0;
+  margin-top: 10px;
+}
+.container1 div ul li {
+  list-style: none;
+}
+.container1 div ul li:hover a {
+  text-decoration: underline;
+}
+.container1 div ul li a {
+  text-decoration: none;
+  color: goldenrod;
+}
+.reserved {
+  background-color: goldenrod;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
+}
+
