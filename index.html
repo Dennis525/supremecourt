@@ -57,19 +57,23 @@
       <div class="nav" id="mynav">
         <ul>
           <li>
-            <a href="index.html">Home</a>
+            <a href="index.html">HOME</a>
           </li>
-
+          
           <div class="side-nav">
+            
             <li>
-              <p>Judges</p>
+              <p>JUDGES</p>
               <ul>
                 <li><a href="">Current Judges biography</a></li>
                 <li><a href="">Retired judges' biography</a></li>
               </ul>
             </li>
             <li>
-              <p>Case Law</p>
+              <a href="">E-FILING</a>
+            </li>
+            <li>
+              <p>CASE LAW</p>
               <ul>
                 <li><a href="">Cases</a></li>
                 <li><a href="">Judgment</a></li>
@@ -79,7 +83,7 @@
             </li>
 
             <li>
-              <p>Law Clerks</p>
+              <p>LAW CLERK</p>
               <ul>
                 <li><a href="">About law clerks</a></li>
                 <li><a href="">Law clerk's biography</a></li>
@@ -87,7 +91,7 @@
               </ul>
             </li>
             <li>
-              <p>Administration</p>
+              <p>ADMINISTRATION</p>
               <ul>
                 <li>
                   <a href="">Registrar Supreme court biography and roles</a>
@@ -96,7 +100,7 @@
               </ul>
             </li>
             <li>
-              <p>Court Documents</p>
+              <p>COURT DOCUMENTS</p>
               <ul>
                 <li><a href="">Docket search</a></li>
                 <li><a href="">Cause list</a></li>
@@ -106,7 +110,7 @@
               </ul>
             </li>
             <li>
-              <p>Library</p>
+              <p>LIBRARY</p>
               <ul>
                 <li><a href="">About the supreme court library</a></li>
                 <li><a href="">Library catalogue</a></li>
@@ -114,17 +118,17 @@
               </ul>
             </li>
             <li>
-              <p>About us</p>
+              <p>ABOUT US</p>
               <ul>
                 <li><a href="">History</a></li>
                 <li><a href="">Role of the supreme court</a></li>
                 <li><a href="">Rules of the court</a></li>
-                <li><a href="">Practice decision</a></li>
+                <li><a href="">Practice direction</a></li>
                 <li><a href="">Supreme court Act</a></li>
               </ul>
             </li>
             <li>
-              <a href="">Contact Us</a>
+              <a href="">CONTACT US</a>
             </li>
           </div>
 
@@ -363,7 +367,29 @@
     </div>
 
     <script>
+      const header = document.querySelector("header");
+      const sideNav = document.querySelector(".side-nav");
+      
+      
+      
+      function setResponsive() {
+        var height = header.clientHeight;
+        sideNav.style.cssText += `top: ${height}px;`;
+      }
+
+      window.addEventListener('loadeddata', ()=>{
+        setResponsive();
+      })
+
+      window.addEventListener('resize',()=>{
+        setResponsive();
+      })
+
+      setResponsive();
+
+
       function myFunction() {
+
         document.querySelector(".side-nav").classList.toggle("clicked");
         // alert("Hey");
         // var x = document.querySelector("#mynav > ul");
